@@ -57,14 +57,24 @@
 		//console.log(elem)
 		if(sorszam==0)
         {
-			if(elem.dataset["babu"]!="")
+			if(elem.dataset["babu"] && elem.dataset["babu"]!="")
             {
 				elso=elem;
 				sorszam++;
+                console.log(elem)
+                console.log(elem.dataset["babu"]);
 			}
 			
 		}
-		else{
+
+        
+		else if(elem!==elso){ 
+            //ha ott van bábu akkor azt törölni kell
+            if(elem.dataset["babu"]!="")
+            {
+                elem.classList.remove(elem.dataset["babu"]);
+                elem.dataset["babu"]="";
+            }
 			//lerakás
 			elem.classList.add(elso.dataset["babu"]);
 			elso.dataset["babu"]=elso.dataset["babu"];
@@ -109,18 +119,18 @@
         </tr>
         <tr>
             <td>2</td>
-            <td class="feherGyalog" data-babu="feherBastya"></td>
-            <td class="fekete feherGyalog"></td>
-            <td class="feherGyalog"></td>
-            <td class="fekete feherGyalog"></td>
-            <td class="feherGyalog"></td>
-            <td class="fekete feherGyalog"></td>
-            <td class="feherGyalog"></td>
-            <td class="fekete feherGyalog"></td>
+            <td class="feherGyalog" data-babu="feherGyalog"></td>
+            <td class="fekete feherGyalog" data-babu="feherGyalog"></td>
+            <td class="feherGyalog" data-babu="feherGyalog"></td>
+            <td class="fekete feherGyalog" data-babu="feherGyalog"></td>
+            <td class="feherGyalog" data-babu="feherGyalog"></td>
+            <td class="fekete feherGyalog" data-babu="feherGyalog"></td>
+            <td class="feherGyalog" data-babu="feherGyalog"></td>
+            <td class="fekete feherGyalog" data-babu="feherGyalog"></td>
         </tr>
         <tr>
             <td>3</td>
-            <td class="fekete" data-babu="" onclick="kattint(this)" ></td>
+            <td class="fekete"></td>
             <td></td>
             <td class="fekete"></td>
             <td></td>
